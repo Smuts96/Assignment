@@ -29,22 +29,26 @@ public class RoverMovementService {
 		return new Rover(id, currentPosition, direction);
 	}
 	
+	//Moving North increase Y coordinate with 1
+	//Moving South decrease Y coordinate with 1
+	//Moving East increase  coordinate with 1
+	//Moving West decrease X coordinate with 1
 	private Position calculatePosition(Position grid, Position currentPosition, Direction direction) throws Exception {
 		switch(direction) {
 			case North:{
-			currentPosition.setyCoordinate(grid, currentPosition.getyCoordinate() + 1);
-			 return currentPosition;
+				currentPosition.setyCoordinate(grid, currentPosition.getyCoordinate() + 1);
+			 	return currentPosition;
 			}	
 			case East:{
-				currentPosition.setxCoordinate(grid, currentPosition.getxCoordinate() + 1);
+				 currentPosition.setxCoordinate(grid, currentPosition.getxCoordinate() + 1);
 				 return currentPosition;
 			}	
 			case South:{
-				currentPosition.setyCoordinate(grid, currentPosition.getyCoordinate() - 1);
+				 currentPosition.setyCoordinate(grid, currentPosition.getyCoordinate() - 1);
 				 return currentPosition;
 			}	
 			case West:{
-				currentPosition.setxCoordinate(grid, currentPosition.getxCoordinate() - 1);
+				 currentPosition.setxCoordinate(grid, currentPosition.getxCoordinate() - 1);
 				 return currentPosition;
 			}	
 			default:
@@ -52,8 +56,8 @@ public class RoverMovementService {
 		}
 	}
 	
+	//Rotate direction according to action
 	private Direction calculateDirection(Direction direction, Actions action) {
-		//Rotate direction
 		switch(action) {
 		 case RotateLeft:
 			 if(direction == Direction.North)
@@ -75,7 +79,7 @@ public class RoverMovementService {
 			 else
 				 return Direction.North;
 		 default: 
-		 return direction;
+		 	return direction;
 		}
 	}
 }

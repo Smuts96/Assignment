@@ -7,6 +7,9 @@ import Model.Rover;
 public class Main {
 	public static void main(String[] args) {
 
+		//Save rover in hashmap for easy retrieval by name
+		//System allow for multiple actions after rover have been dropped
+		//System will detect when new rover was dropped
 		int count = 0;
 		HashMap<String, Rover> rovers = new HashMap<>();
 		
@@ -22,6 +25,7 @@ public class Main {
 			while(fileReader.hasNextLine()) {
 				String line = fileReader.nextLine().toUpperCase();
 				String name = "Rover "+ count; 
+				
 				//Grid size always comes first
 				if(count == 0) {
 					String[] coordinates = line.split("\\s+");
@@ -63,6 +67,7 @@ public class Main {
 			//Close file reader
 			fileReader.close();
 			
+			//Print results
 			for(Rover rover : rovers.values()) {
 				System.out.println(rover.getId()+": "+ rover.getPosition().getxCoordinate() + " " + rover.getPosition().getyCoordinate() + " " + rover.getDirection() + "\n\n");
 			}

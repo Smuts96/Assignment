@@ -5,7 +5,7 @@ public enum Direction {
 	East, 
 	South, 
 	West; 
-	
+	//Convert letters to direction enum
 	public static Direction fromString(String direction) throws Exception{
 		switch(direction) {
 		case "E":

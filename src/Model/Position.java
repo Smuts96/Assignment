@@ -45,15 +45,15 @@ public class Position {
 		this.yCoordinate = yCoordinate;
 	}
 	
+	//Validate coordinates against grid
 	public void validateXCoordinate(Position grid, int x) throws Exception {
 		//Check if x coordinate was in range
 		if(grid == null || x < 0 || x > grid.xCoordinate)
 			throw new Exception("Invalid X - Coordinate: "+ x +". The grid is only " + grid.getxCoordinate() + " units long horizontal.");
 	}
 	
+	//Validate coordinates against grid
 	public void validateYCoordinate(Position grid, int y) throws Exception {
-		//Check if y coordinate was in range
-
 		if(grid == null || y < 0 || y > grid.yCoordinate)
 			throw new Exception("Invalid Y - Coordinate: "+ y +". The grid is only " + grid.getyCoordinate() + " units long vertical.");
 	}

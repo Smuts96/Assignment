@@ -16,6 +16,7 @@ public class Rover extends RoverMovementService {
 		setDirection(direction);
 	}
 	
+	//Set rover override details
 	public Rover(String id, Position position, Direction direction) throws Exception {
 		this.id = id;
 		this.position = position;
@@ -59,6 +60,7 @@ public class Rover extends RoverMovementService {
 		this.direction = Direction.fromString(direction);
 	}
 	
+	//Set rovers new position
 	public void setMovement(Position grid, String movement) throws Exception {
 		Rover rover = super.CalculateRoverMovement(grid, this.position, this.direction, movement, this.id);
 		this.position = rover.position;

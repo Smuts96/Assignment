@@ -6,6 +6,7 @@ public enum Actions {
 	MoveForward;
 
 	public static Actions fromString(String action) throws Exception{
+		//Convert L to left, R to right and M to MoveForward
 		switch(action) {
 		case "L":
 			return Actions.RotateLeft;
